@@ -1,85 +1,127 @@
-# Sports Aiming Accuracy Dashboard
+# 🎯 Sports Aiming Accuracy Dashboard
 
-A comprehensive React dashboard for analyzing sports aiming accuracy and performance. Built with React, Vite, TypeScript, and modern UI components.
+> A professional React-based analytics dashboard designed to measure, visualize, and improve sports aiming accuracy and performance. Featuring AI-powered coaching, interactive data visualizations, and multi-sport support, the platform provides athletes and coaches with actionable insights.
 
-## Features
+Built with React, Vite, JavaScript, and modern UI libraries, this project combines high-performance development tools with intuitive design.
 
-- **Multi-Sport Support**: Basketball, Archery, and Darts with sport-specific target radii
-- **Real-time Analytics**: Rolling accuracy trends, shot grouping visualization, and performance metrics
-- **Interactive Charts**: Line charts, scatter plots, radar charts, and target plane visualization
-- **CSV Data Import**: Upload your own session data for analysis
-- **Coaching Insights**: AI-generated coaching cues and practice recommendations
-- **Responsive Design**: Works on desktop and mobile devices
-- **Dark Mode Support**: Built-in dark/light theme switching
+---
 
-## Tech Stack
+## 🚀 Features
 
-- **React 18** with TypeScript
-- **Vite** for fast development and building
-- **Tailwind CSS** for styling
-- **Recharts** for data visualization
-- **Framer Motion** for animations
-- **Lucide React** for icons
-- **shadcn/ui** for UI components
-- **Radix UI** for accessible primitives
+| Feature | Description |
+|---------|-------------|
+| **🏀 Multi-Sport Support** | Basketball, Archery, and Darts with sport-specific configurations |
+| **📊 Real-Time Analytics** | Rolling accuracy trends, shot grouping visualizations, and performance KPIs |
+| **📈 Dynamic Charts** | Interactive line charts, scatter plots, radar charts, and target-plane diagrams |
+| **📁 CSV Data Import** | Upload custom session data for in-depth analysis |
+| **🤖 AI-Powered Coaching** | Integrated with OpenAI GPT models for tailored feedback and practice plans |
+| **💬 AI Chat Assistant** | Real-time Q&A for training strategies, technique corrections, and progress insights |
+| **🎮 Demo Mode** | Fully functional fallback mode when API is unavailable (no key required) |
+| **⚙️ Customizable Settings** | Manage API keys, model preferences, and feature toggles via Settings Panel |
+| **📱 Responsive & Accessible** | Optimized for both desktop and mobile, with built-in dark mode support |
 
-## Getting Started
+## 🛠 Tech Stack
 
-### Prerequisites
+<div align="center">
 
-- Node.js 16+ 
-- npm or yarn
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Frontend** | React 18 (JavaScript) | Modern UI framework |
+| **Build Tool** | Vite | Lightning-fast build and dev server |
+| **Styling** | Tailwind CSS | Utility-first styling system |
+| **Charts** | Recharts | Data visualization library |
+| **Animations** | Framer Motion | Smooth UI animations |
+| **Icons** | Lucide React | Beautiful icon set |
+| **UI Components** | shadcn/ui & Radix UI | Modern UI primitives and components |
+| **HTTP Client** | Axios | API communication |
+| **AI Integration** | OpenAI API | AI coaching and analysis |
 
-### Installation
+</div>
 
-1. Clone or download this project
-2. Install dependencies:
+## ⚡ Getting Started
 
-```bash
-npm install
-```
+### 📋 Prerequisites
 
-3. Start the development server:
+- **Node.js** v16 or higher
+- **npm** or **yarn** package manager
+- *(Optional)* **OpenAI API key** for AI features
 
-```bash
-npm run dev
-```
+### 🚀 Installation
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/sports-accuracy-dashboard.git
+   cd sports-accuracy-dashboard
+   ```
 
-### Building for Production
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run build
-```
+3. **Configure environment variables** *(optional for AI features):*
+   
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_OPENWEBUI_BASE_URL=https://api.openai.com/v1
+   VITE_OPENWEBUI_API_KEY=your-openai-api-key-here
+   VITE_DEFAULT_MODEL=gpt-3.5-turbo
+   ```
 
-The built files will be in the `dist` directory.
+4. **Start development server:**
+   ```bash
+   npm run dev
+   ```
 
-## Usage
+5. **Open your browser:**
+   ```
+   http://localhost:5173
+   ```
 
-### Using Sample Data
+## 🤖 AI Features Setup
 
-The dashboard comes with sample basketball free throw data. You can:
-- View accuracy trends and metrics
-- Analyze shot grouping patterns
-- Get coaching recommendations
-- Switch between different sports
+### 🎮 Demo Mode *(Default)*
 
-### Importing Your Own Data
+- ✅ **Works instantly** with no API key required
+- 🧠 **Generates intelligent insights** from session data
+- 💰 **Free to use** with no API cost
+- 🔄 **Automatic fallback** when API is unavailable
 
-1. Prepare a CSV file with the following columns:
+### 🔑 OpenAI API Mode *(Optional)*
+
+- 🔐 **Requires OpenAI API key** for full functionality
+- ⚡ **Enables real-time AI-powered coaching** and analysis
+- ⚙️ **Configure** in Settings Panel or via `.env` variables
+- 🎯 **Enhanced responses** with live AI model integration
+
+## 📊 Usage
+
+### 🏀 Sample Data
+
+The dashboard ships with sample basketball free throw data for testing. You can:
+
+- 📈 **Track accuracy trends** over time
+- 🎯 **Analyze shot groupings** and patterns
+- 🤖 **Receive AI-generated coaching insights**
+- 💬 **Interact with the AI chat assistant**
+- 🏆 **Switch between multiple sports**
+
+### 📁 Importing Custom Data
+
+1. **Prepare a CSV file** with these headers:
    - `t`: Attempt number/time
-   - `hit`: Whether the shot was successful (1/true/yes or 0/false/no)
-   - `err`: Radial error in centimeters
-   - `x`: Horizontal deviation in cm (+right/-left)
-   - `y`: Vertical deviation in cm (+high/-low)
-   - `releaseDeg`: Release angle in degrees (optional)
-   - `speed`: Initial speed in m/s (optional)
+   - `hit`: Shot success (1/0, yes/no, true/false)
+   - `err`: Radial error (cm)
+   - `x`: Horizontal deviation (+right/-left, cm)
+   - `y`: Vertical deviation (+high/-low, cm)
+   - `releaseDeg`: Release angle *(optional)*
+   - `speed`: Initial velocity in m/s *(optional)*
 
-2. Click "Import CSV" and select your file
-3. The dashboard will automatically update with your data
+2. **Import via "Import CSV" button**
+3. **Dashboard updates instantly**
+4. **AI adapts coaching feedback** to your dataset
 
-### CSV Format Example
+#### 📄 Example CSV Format
 
 ```csv
 t,hit,err,x,y,releaseDeg,speed
@@ -88,87 +130,134 @@ t,hit,err,x,y,releaseDeg,speed
 3,1,7.8,-2.1,7.4,51.9,7.1
 ```
 
-## Features Overview
+## 📈 Features Overview
 
-### Key Performance Indicators (KPIs)
-- Total attempts
-- Accuracy percentage
-- Mean radial error
-- Release angle statistics
+### 📊 Key Performance Indicators (KPIs)
 
-### Charts and Visualizations
-- **Accuracy Trend**: Rolling accuracy over time
-- **Release Angle vs Hit**: Scatter plot showing technique correlation
-- **Skill Profile**: Radar chart of performance metrics
-- **Shot Grouping**: Visual target plane with shot impacts
-- **Coaching Cues**: Personalized recommendations
+- **Total attempts** - Session shot count
+- **Accuracy %** - Success rate percentage
+- **Mean radial error** - Average precision measurement
+- **Release angle distribution** - Technique consistency metrics
 
-### Analysis Controls
-- Adjustable rolling window size for trend analysis
-- Sport selection (affects target radius and recommendations)
-- Data reset functionality
+### 📈 Charts & Visualizations
 
-## Project Structure
+| Chart Type | Description |
+|------------|-------------|
+| **📈 Accuracy Trends** | Rolling performance over time |
+| **🎯 Release Angle vs Hit** | Technique correlations |
+| **🕸️ Skill Profile** | Radar chart of metrics |
+| **🎪 Shot Groupings** | Target-plane scatter visualization |
+| **🤖 AI Recommendations** | Contextual insights and coaching cues |
+
+### 🎛️ Controls
+
+- **📏 Adjustable rolling window** for trend analysis
+- **🏆 Sport-specific configurations** (radius, metrics)
+- **🤖 AI Assistant toggle** for coaching features
+- **🔄 Data reset** functionality
+- **⚙️ API settings panel** for configuration
+
+## 📂 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── ui/                 # shadcn/ui components
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── input.tsx
-│   │   ├── label.tsx
-│   │   └── select.tsx
-│   └── SportsAccuracyDashboard.tsx  # Main dashboard component
+│   ├── ui/                          # 🎨 shadcn/ui components
+│   │   ├── button.jsx
+│   │   ├── card.jsx
+│   │   ├── input.jsx
+│   │   ├── label.jsx
+│   │   └── select.jsx
+│   ├── SportsAccuracyDashboard.jsx  # 🎯 Main dashboard
+│   ├── AICoachingPanel.jsx         # 🤖 AI insights panel
+│   ├── AIChatInterface.jsx         # 💬 AI chat interface
+│   └── OpenWebUISettings.jsx       # ⚙️ API configuration
 ├── lib/
-│   └── utils.ts           # Utility functions
-├── App.tsx                # Root component
-├── main.tsx              # Entry point
-└── index.css             # Global styles
+│   ├── utils.js                     # 🔧 Utility functions
+│   ├── openwebui-client.js          # 🌐 API client wrapper
+│   ├── auth.js                      # 🔐 Auth utilities
+│   └── config.js                    # ⚙️ Config manager
+├── App.jsx                          # 🚀 Root component
+├── main.jsx                         # 📱 Entry point
+└── index.css                        # 🎨 Global styles
 ```
 
-## Customization
+## 🎨 Customization
 
-### Adding New Sports
+### 🏆 Adding New Sports
 
-1. Update the sport options in the Select component
-2. Add sport-specific target radius in the `targetRadiusCm` calculation
-3. Modify coaching cues in the `CoachingCues` component
+1. **Add new options** in sport selector
+2. **Define sport-specific target radius** in calculations
+3. **Update AI coaching cues** for sport context
 
-### Styling
+### 🎨 Styling
 
-The project uses Tailwind CSS with custom CSS variables for theming. Modify `src/index.css` to change colors and styling.
+- **Tailwind CSS** with custom CSS variables
+- **Modify `index.css`** for theming and color adjustments
+- **Component-level styling** using Tailwind utilities
 
-### Data Processing
+### 📊 Data Processing
 
-The dashboard processes data in the `parseCSV` function. Modify this function to support different CSV formats or add data validation.
+- **Handled in `parseCSV` function**
+- **Extend for validation** or alternative CSV formats
+- **Custom data transformations** as needed
 
-## Development
+## 🔧 Development
 
-### Available Scripts
+### 📜 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | 🚀 Start development server |
+| `npm run build` | 🏗️ Production build |
+| `npm run preview` | 👀 Preview production build |
+| `npm run lint` | 🔍 Run ESLint checks |
 
-### Code Style
+### 📝 Code Style
 
-The project uses ESLint with TypeScript rules. Make sure to follow the configured linting rules.
+- **Configured with ESLint** (JavaScript rules)
+- **Ensure code adheres** to linting standards
+- **Consistent formatting** across the project
 
-## Contributing
+## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+1. **🍴 Fork the repository**
+2. **🌿 Create a feature branch**
+3. **💻 Implement your changes**
+4. **🧪 Run tests & linting**
+5. **📤 Submit a pull request**
 
-## License
+---
 
-This project is open source and available under the MIT License.
+## 📜 License
 
-## Support
+This project is released under the **MIT License**.
 
-For questions or issues, please open an issue in the repository or contact the development team.
-# Sports_Analytics_AIM
+---
+
+## 🛠 Troubleshooting
+
+### ❌ Common Issues
+
+#### 🔑 API Quota Exceeded (429 error)
+- ✅ **Falls back to Demo Mode** automatically
+- 💳 **Check OpenAI billing** at [platform.openai.com/account/billing](https://platform.openai.com/account/billing)
+- 💰 **Add credits** or continue in Demo Mode
+
+#### 🎨 CSS Not Loading
+- 🔄 **Restart dev server**: `npm run dev`
+- 🧹 **Clear browser cache**
+- ⚙️ **Verify Tailwind configuration**
+
+#### 🤖 AI Features Not Working
+- **🎮 Demo Mode**: Works without setup
+- **🔑 API Mode**: Requires valid OpenAI key
+- **🔧 Use "Test Connection"** in Settings panel
+
+---
+
+## 📞 Support
+
+- 🐛 **Open an issue** in the GitHub repository
+- 📧 **Contact the development team** for assistance
+- 📖 **Check the documentation** for detailed guides
